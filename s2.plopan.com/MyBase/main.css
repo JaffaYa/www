@@ -1,0 +1,18 @@
+body {
+    background:#333;
+    color:#fff;
+}
+
+.body {
+    font-family:'Bree Serif', cursive;
+    font-size:40px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-width: 3px;
+}
+
+form {
+    width: 100px;
+    margin: 0 auto;
+}
