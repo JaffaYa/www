@@ -1,5 +1,5 @@
-Options All -Indexes
-#Options Indexes FollowSymLinks
+#Options All -Indexes
+Options Indexes FollowSymLinks
 DirectoryIndex index.php index.html
 #Настройки PHP
 php_flag short_open_tag on
