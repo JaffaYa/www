@@ -2,25 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>View</title>
+    <title>Посмотреть</title>
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div style="">
-    <table style=" font-family:'Bree Serif', cursive;
-                   font-size:40px;
-                   margin: 0 auto;
-                   border:5px groove #CCC;
-                   padding: 18px;
-                   vertical-align: middle;
-                   position: absolute;
-                   top: 50%;
-                   left: 50%;
-                   height: 30%;
-                   width: 50%;
-                   margin: -15% 0 0 -25%;
-    ">
+<div>
+    <table>
         <tr>
             <td>
 <?php
