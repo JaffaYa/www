@@ -1,5 +1,13 @@
-//ініціалізація
-$pq = phpQuery::newDocument($html);
+<?php//ініціалізація
+require_once 'phpQuery/phpQuery/phpQuery.php';
 
-$price = $pq->find($tags['tag_price'])->html();
-$price = $pq->find($tags['tag_price'])->test();
+$doc = phpQuery::newDocument($html);
+
+//help.php
+$price = $doc->find($tags['tag_price'])->html();
+$price = $doc->find($tags['tag_price'])->test();
+
+// розгрузка памяті
+phpQuery::unloadDocuments($doc);
+
+?>

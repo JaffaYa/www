@@ -5,7 +5,8 @@
  * Date: 15.06.2017
  * Time: 0:36
  */
-define("AGENT", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36");
+//define("AGENT", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36");
+define("AGENT", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36");
 
 
 function SendRequest($url, $proxy = false, $post = false, $post_data = false, $user_agent = AGENT, $headers = false, $extradata = false)
