@@ -18,10 +18,23 @@ while ($row = mysqli_fetch_assoc($resoult)){
     $arr[]=$row;
 }*/
 $arr_proxy = array();
-$proxy_list = file('proxy/proxylist25.txt');
+//$proxy_list = file('proxy/proxylist25.txt');
+$conn = mysqli_connect("localhost", "root", "root", "proxy");
+$textQueri = "SELECT 
+				ip,
+				port
+				FROM proxy
+				WHERE type = 'SOCKS5'
+                ORDER BY id";
+                //LIMIT $offset, $limit";//country_code='RU' AND
+$proxy_list = mysqli_query($conn, $textQueri) or die(mysqli_error($conn));
+mysqli_close($conn);
+
+$proxy_list = db2Array($proxy_list);
+
+
 foreach($proxy_list  as $item){
-    $proxya = explode(':',$item);
-    $arr_proxy [] = $proxya[0].':'.$proxya[1];
+    $arr_proxy [] = $item['ip'].':'.$item['port'];
 }
 
 define('AC_DIR', dirname(__FILE__));
@@ -44,7 +57,7 @@ $AC->load_proxy_list(
     # optional: number of threads
     200,
     # optional: proxy type
-    'http',
+    'SOCKS5',
     # optional: target url to check
     'http://google.com',
     # optional: target regexp to check
@@ -54,12 +67,12 @@ $AC->load_useragent_list( AC_DIR . DIRECTORY_SEPARATOR .'AngryCurl'. DIRECTORY_S
 
 # Basic request usage (for extended - see demo folder)
 
-$AC->get('https://www.twitch.tv/mst9xatv');
-$AC->get('https://www.twitch.tv/mst9xatv');
-$AC->get('https://www.twitch.tv/mst9xatv');
-$AC->get('https://www.twitch.tv/mst9xatv');
-$AC->get('https://www.twitch.tv/mst9xatv');
-$AC->get('https://www.twitch.tv/mst9xatv');
+$AC->get('https://www.twitch.tv/feelyourdestiny');
+$AC->get('https://www.twitch.tv/feelyourdestiny');
+$AC->get('https://www.twitch.tv/feelyourdestiny');
+$AC->get('https://www.twitch.tv/feelyourdestiny');
+$AC->get('https://www.twitch.tv/feelyourdestiny');
+$AC->get('https://www.twitch.tv/feelyourdestiny');
 
 
 # Starting with number of threads = 200
@@ -102,6 +115,14 @@ function callback_function($response, $info, $request)
     }
 
     return;
+}
+
+function db2Array($resoult){
+    $arr=array();
+    while ($row = mysqli_fetch_assoc($resoult)){
+        $arr[]=$row;
+    }
+    return $arr;
 }
 
 

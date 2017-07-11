@@ -23,8 +23,9 @@ function SendRequest($url, $proxy = false, $post = false, $post_data = false, $u
     if($extradata){
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
         curl_setopt($ch, CURLOPT_HEADER, 1);
+        //curl_setopt($ch, CURLOPT_NOBODY, true); //Без HTML
     }
-    //curl_setopt($ch, CURLOPT_NOBODY, true); //Без HTML
+
 
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); //следовать редиректу
 
@@ -58,3 +59,4 @@ function SendRequest($url, $proxy = false, $post = false, $post_data = false, $u
 
     return array($http, $response);
 }
+
