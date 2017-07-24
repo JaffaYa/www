@@ -16,6 +16,7 @@
             font-family: 'Bree Serif', cursive;
             font-size: 40px;
             text-align: center;
+            padding: 0 20px;
 
 
             min-width: 700px;
@@ -45,7 +46,7 @@
 
             color: rgb(<?=rand(0,155).','.rand(0,155).','.rand(0,155); ?>);
             background: rgba(<?$main_bg_color=rand(120,255).','.rand(120,255).','.rand(120,255);
-                                echo $main_bg_color.','.rand(1,9); ?>);
+                                echo $main_bg_color.',1.'.rand(1,9); ?>);/*тут можна полностю не прзрачний*/
         }
         .form {
             margin-top: 20px;
@@ -56,7 +57,7 @@
             font-size: 40px;
             background: rgb(<?=$main_bg_color;?>);
             border-radius: 20px;
-            -border:0;
+            border:0;
             outline: none;
             overflow: visible;
             width: 70%;
